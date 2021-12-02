@@ -127,6 +127,7 @@
     <Compile Include="Models\Autor.cs" />
     <Compile Include="Models\Cidade.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Delivery.cs" />
     <Compile Include="Models\Editora.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Estado.cs" />
