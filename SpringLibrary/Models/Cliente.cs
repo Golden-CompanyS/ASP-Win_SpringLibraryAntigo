@@ -28,20 +28,20 @@ namespace SpringLibrary.Models
 
         [Display(Name = "Data de nascimento do Cliente Físico")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime cliFisNasc
+        public DateTime CliFisNasc
         {
             get
             {
-                return this.funcDtNasc.HasValue
-                ? this.funcDtNasc.Value
+                return this.cliFisNasc.HasValue
+                ? this.cliFisNasc.Value
                : DateTime.Now;
             }
             set
             {
-                this.funcDtNasc = value;
+                this.cliFisNasc = value;
             }
         }
-        private DateTime? funcDtNasc = null;
+        private DateTime? cliFisNasc = null;
 
         [Display(Name = "Telefone do Cliente")]
         public string cliTel { get; set; }
