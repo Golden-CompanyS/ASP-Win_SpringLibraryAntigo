@@ -165,6 +165,7 @@ foreign key (locCod) references tblocacao (locCod),
 restCod int,
 foreign key (restCod) references tbrestauracao (restCod)
 );
+
 -- Funcionalidades do Banco 
 
 insert into tbgenero (genNome) values ("Ficção Literária");
@@ -187,7 +188,6 @@ create procedure insertBook(
 isbnN char(13),
 livTituloN varchar(50),
 livTituloOrigN varchar(50),
-livImgN varchar(500),
 livEdicaoN int,
 livAnoN char(4),
 livNumPagN int,
@@ -205,7 +205,7 @@ begin
 		insert into tbautor (autNome) values (autNomeN);
     end if; 
     
-    insert into tblivro values (isbnN, livTituloN, livTituloOrigN, livImgN, livEdicaoN, livAnoN, livNumPagN, genCodN,
+    insert into tblivro values (isbnN, livTituloN, livTituloOrigN, livEdicaoN, livAnoN, livNumPagN, genCodN,
     (select (editCod) from tbeditora where (editNome = editNomeN)));
     
     insert into tblivroautor values (isbnN, (select (autCod) from tbautor where(autNome = autNomeN)));
@@ -456,13 +456,13 @@ from ((tbnotafiscal as n
 
 /*-------------Inserções de dados no banco-------------*/
 
-call insertBook("9788594318619","Memórias Póstumas de Brás Cubas", null,"CAMINHO", 3, 2019, 192, 9.45, 34, 1,"Principis",
+call insertBook("9788594318619","Memórias Póstumas de Brás Cubas", null, 3, 2019, 192, 9.45, 34, 1,"Principis",
 "Machado de Assis");
-call insertBook("9788595086784","Assassinato no Expresso do Oriente", "Murder on the Orient Express", "CAMINHO", 1, 2020,240, 24.90,38,7,
+call insertBook("9788595086784","Assassinato no Expresso do Oriente", "Murder on the Orient Express", 1, 2020,240, 24.90,38,7,
 "HarperCollins","Agatha Christie");
 
-insert into tbfuncionario values (default, "Britney Jean Spears", null, "IMAGEM","G","gimmemore");
-insert into tbfuncionario values (default, "Nelly Furtado", null, "IMAGEM", "F", "promiscuous");
+insert into tbfuncionario values (default, "Britney Jean Spears", null,"G","gimmemore");
+insert into tbfuncionario values (default, "Nelly Furtado", null, "F", "promiscuous");
 
 call insertCliFis("183.015.170-34","Larissa Miranda Sonoda",null,"2005-04-12","11 91242-3123","larissa.sonoda@etec.sp.gov.br",
 "Rua Jardim de Abril",185,"São Paulo","SP","03982-090");
