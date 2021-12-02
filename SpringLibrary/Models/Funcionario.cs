@@ -22,5 +22,8 @@ namespace SpringLibrary.Models
 
         [Display(Name = "Senha do Funcionário")]
         public string funcSenha { get; set; }
+
+        [Display(Name = "CEP do endereço")]
+        public string CEP { get; set; }
     }
 }
