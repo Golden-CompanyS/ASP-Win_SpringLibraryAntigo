@@ -8,6 +8,19 @@ namespace SpringLibrary.Models
 {
     public class Funcionario
     {
-        //programar depois quando o banco de dados estiver pronto
+        [Display(Name = "Código do Funcionário")]
+        public int funcCod { get; set; }
+
+        [Display(Name = "Nome do Funcionário")]
+        public string funcNome { get; set; }
+
+        [Display(Name = "Nome social do Funcionário")]
+        public string funcNomeSoc { get; set; }
+
+        [Display(Name = "Cargo do Funcionário")]
+        public string funcCargo { get; set; }
+
+        [Display(Name = "Senha do Funcionário")]
+        public string funcSenha { get; set; }
     }
 }
