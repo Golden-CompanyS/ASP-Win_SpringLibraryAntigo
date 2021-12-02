@@ -131,6 +131,7 @@
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Models\LivroAutor.cs" />
     <Compile Include="Models\LivroProd.cs" />
+    <Compile Include="Models\NotaFiscal.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Souvenir.cs" />
     <Compile Include="Models\SouvProd.cs" />
