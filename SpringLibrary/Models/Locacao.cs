@@ -34,6 +34,7 @@ namespace SpringLibrary.Models
         private DateTime? locData = null;
 
         [Display(Name = "Preço da Locação")]
+        [RegularExpression(@"R\$ ?\d{1,3}(\.\d{3})*,\d{2}", ErrorMessage = "Coloque um valor real")]
         public decimal locPreco { get; set; }
 
         [Display(Name = "Código do Cliente")]

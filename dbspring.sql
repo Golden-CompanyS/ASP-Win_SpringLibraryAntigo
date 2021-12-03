@@ -37,7 +37,7 @@ foreign key (editCod) references tbEditora (editCod)
 );
 
 create table tbLivroAutor(
-isbn char(17),
+isbn char(13),
 foreign key (isbn) references tbLivro (isbn),
 autCod int,
 foreign key (autCod) references tbAutor(autCod)

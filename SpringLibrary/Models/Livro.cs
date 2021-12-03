@@ -9,6 +9,7 @@ namespace SpringLibrary.Models
     public class Livro
     {
         [Display(Name = "ISBN do livro")]
+        [RegularExpression(@"^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$", ErrorMessage = "Número inválido")]
         public string isbn { get; set; }
 
         [Display(Name = "Título do livro em Português")]

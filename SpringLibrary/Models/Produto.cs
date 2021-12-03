@@ -15,6 +15,7 @@ namespace SpringLibrary.Models
         public string prodNome { get; set; }
 
         [Display(Name = "Preço do produto")]
+        [RegularExpression(@"R\$ ?\d{1,3}(\.\d{3})*,\d{2}", ErrorMessage = "Coloque um valor real")]
         public decimal prodPreco { get; set; }
 
         [Display(Name = "Quantidade no estoque")]

@@ -12,9 +12,11 @@ namespace SpringLibrary.Models
         public int cliCod { get; set; }
 
         [Display(Name = "CPF do Cliente caso Físico")]
+        [RegularExpression(@"[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}", ErrorMessage = "Valor Inválido")]
         public string CPF { get; set; }
 
         [Display(Name = "CNPJ do Cliente caso Jurídico")]
+        [RegularExpression(@"^\d{3}.?\d{3}.?\d{3}/?\d{3}-?\d{2}$ ou ^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$", ErrorMessage = "Valor inválido")]
         public string CNPJ { get; set; }
 
         [Display(Name = "Nome do Cliente caso Físico")]
@@ -44,12 +46,19 @@ namespace SpringLibrary.Models
         private DateTime? cliFisNasc = null;
 
         [Display(Name = "Telefone do Cliente")]
+        [RegularExpression(@"^\([1-9]{2}\) [9]{0,1}[6-9]{1}[0-9]{3}\-[0-9]{4}$", ErrorMessage = "Formato de telefone inválido")]
         public string cliTel { get; set; }
 
         [Display(Name = "Email do Cliente")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Formato de e-mail inválido")]
         public string cliEmail { get; set; }
 
         [Display(Name = "Número de endereço do Cliente")]
         public int cliEndNum { get; set; }
+
+        [Display(Name = "CEP do endereço")]
+        [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "Digite um CEP válido")]
+        public string CEP { get; set; }
+
     }
 }

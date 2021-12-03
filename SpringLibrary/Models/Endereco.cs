@@ -9,6 +9,7 @@ namespace SpringLibrary.Models
     public class Endereco
     {
         [Display(Name = "CEP do endereço")]
+        [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "Digite um CEP válido")]
         public string CEP { get; set; }
 
         [Display(Name = "Logadouro do endereço")]
