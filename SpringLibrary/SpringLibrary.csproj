@@ -133,6 +133,7 @@
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Genero.cs" />
+    <Compile Include="Models\ItemVenda.cs" />
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Models\LivroAutor.cs" />
     <Compile Include="Models\LivroProd.cs" />
