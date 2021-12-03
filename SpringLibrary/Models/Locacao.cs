@@ -11,10 +11,10 @@ namespace SpringLibrary.Models
         [Display(Name = "Código da Locação")]
         public int locDesc { get; set; }
 
-        [Display(Name = "Descrição da Locação")]
-        public string locDesc { get; set; }
+        [Display(Name = "Hora de início do evento")]
+        public string locHoraIni { get; set; }
 
-        //fazer amanha essas duas:  locHoraIni time not null e locHoraFim time not null,
+        public string locHoraFim { get; set; }
 
         [Display(Name = "Data da Locação")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
