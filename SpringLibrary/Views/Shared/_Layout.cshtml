@@ -25,8 +25,8 @@
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     </ul>
                     <ul class="= nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Logout", "Login", "Login/Logout")</li>
                         <li>@Html.ActionLink(@Session["funcionarioLogado"].ToString(), "Login", "Login/Logout")</li>
+                        <li>@Html.ActionLink("Logout", "Login", "Login/Logout")</li>
                     </ul>
                 </div>
             }
