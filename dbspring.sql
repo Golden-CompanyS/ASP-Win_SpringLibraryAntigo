@@ -1,5 +1,8 @@
 drop database if exists dbspringlibrary;
 
+/*Integrantes: Leticia Resina (líder), Maria Eduarda Rodrigues, Larissa Sonoda, Mateus Taveira, Wesley Spiandorim
+Guilherme Lemes & Gustavo Pereira */
+
 -- Criando o banco 
 
 create database dbspringlibrary;
@@ -552,4 +555,11 @@ select * from showLocs;
 select * from showRestors;
 select * from seeClis;
 
+select * from tbFuncionario;
+
 SET SQL_SAFE_UPDATES = 0;
+
+/*Funcionário para apresentação do sistema*/
+insert into tbfuncionario values (default, "Katarina", null, "G", "noxus");
+
+
