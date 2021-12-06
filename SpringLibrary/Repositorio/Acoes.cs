@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SpringLibrary.Repositorio
 {
-    public class Conexao
+    public class Acoes
     {
     }
 }

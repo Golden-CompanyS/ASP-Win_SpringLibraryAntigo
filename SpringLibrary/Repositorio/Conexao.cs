@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SpringLibrary.Repositorio
 {
-    public class Acoes
+    public class Conexao
     {
         MySqlConnection cn = new MySqlConnection("Server=localhost;Database=dbspringlibrary;user=root;pwd=leleca0404");
         public static string msg;
