@@ -19,7 +19,7 @@
 .logo-empresa {
     position: absolute;
     background-image: url(images/LOGO_SPRING_LIBRARY.png);
-    margin: 20px;
+    margin: 25px;
     margin-left: 880px;
     width: 15%;
     height: 40vh;
@@ -32,9 +32,9 @@
 .mensagem h4 {
     position: absolute;
     margin: 15px;
-    margin-left: 880px;
+    margin-left: 885px;
     font-size: 25px;
-    font-weight: normal
+    font-weight: normal;
 }
 
 .inputs {
@@ -46,7 +46,7 @@
 }
 
 .input-nome{
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .input-nome input {
@@ -72,15 +72,14 @@
 
 .botao {
     position: absolute;
-    margin-left: 890px;
-    margin-top: 510px;
+    margin-left: 880px;
+    margin-top: 520px;
 }
 
 .botao input{ 
      width:125px;
      height:50px;
      font-size: 20px;
-     justify-content:center;
      background-color:#976D45;
      cursor:pointer;
      border:none;
