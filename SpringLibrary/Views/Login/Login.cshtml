@@ -1,35 +1,79 @@
 ﻿@model SpringLibrary.Models.Funcionario
 @{
     ViewBag.Title = "Login";
+    Layout = null;
 }
 
-@using (Html.BeginForm("VerificarFunc", "Login", FormMethod.Post))
-            {
-                <fieldset>
+<!DOCTYPE html>
 
-                    <legend>Login do Funcionário</legend>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="~/Content/login.css" rel="stylesheet" />
+    </head>
 
-                    <div>
-                        @Html.LabelFor(m => m.funcNome)
+    <body>
+        <div class="form-login">
+            <div class="formulario">
+                <div class="imagem"></div>
+
+                @using (Html.BeginForm("VerificarFunc", "Login", FormMethod.Post))
+                {
+                    <div class="logo-empresa">
                     </div>
+                    <div class="mensagem">
+                        <h4>
+                            Seja bem-vindo(a)!
+                        </h4>
+</div>
+                    <div class="inputs">
 
-                    <div>
-                        @Html.TextBoxFor(m => m.funcNome)
+                        <div class="input-nome">
+                            <div class="linha"></div>
+                            <label for="">Funcionário</label>
+                            <br />
+                            @Html.EditorFor(m => m.funcNome, new
+                            {
+                                htmlAttributes = new
+                                {
+                                    id = "txtFunc",
+                                    senha = "txtFunc",
+                           type = "text",
+                                    @class = "input",
+                                    required = "required"
+                                }
+                            })
+                            @Html.ValidationMessageFor(m => m.funcNome, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="input-senha">
+                            <div class="linha"></div>
+                            <label for="">Senha</label>
+                            <br />
+                            @Html.EditorFor(m => m.funcSenha, new
+                            {
+                                htmlAttributes = new
+                                {
+                                    id = "txtSenha",
+                                    senha = "txtSenha",
+                           type = "password",
+                                    @class = "input",
+                                    required = "required"
+                                }
+                            })
+                            @Html.ValidationMessageFor(m => m.funcSenha, "", new { @class = "text-danger" })
+                        </div>
+
                     </div>
-
-                      <div>
-                        @Html.LabelFor(m => m.funcSenha)
-                    </div>
-
-                    <div>
-                        @Html.PasswordFor(m => m.funcSenha)
-                    </div>
-
-                    <br/>
-
-                    <div>
+                    <div class="botao">
                         <input type="submit" name="btnEnviar" value="Login" />
                     </div>
+                }
+            </div>
+        </div>
+        
+ 
 
-                </fieldset>
-            }
+    </body>
+</html>
