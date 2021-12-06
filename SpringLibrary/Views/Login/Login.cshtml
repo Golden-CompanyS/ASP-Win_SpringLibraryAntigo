@@ -1,0 +1,35 @@
+﻿@model SpringLibrary.Models.Funcionario
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("VerificarFunc", "Login", FormMethod.Post))
+            {
+                <fieldset>
+
+                    <legend>Login do Funcionário</legend>
+
+                    <div>
+                        @Html.LabelFor(m => m.funcNome)
+                    </div>
+
+                    <div>
+                        @Html.TextBoxFor(m => m.funcNome)
+                    </div>
+
+                      <div>
+                        @Html.LabelFor(m => m.funcSenha)
+                    </div>
+
+                    <div>
+                        @Html.TextBoxFor(m => m.funcSenha)
+                    </div>
+
+                    <br/>
+
+                    <div>
+                        <input type="submit" name="btnEnviar" value="Login" />
+                    </div>
+
+                </fieldset>
+            }
