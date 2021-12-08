@@ -95,7 +95,29 @@ namespace SpringLibrary.Repositorio
 
             dr.Close();
             return AltFunc;
+        }
 
+        //Alterando funcionário 
+
+        public void FuncionarioAlterar(Funcionario funcio)
+        {
+            MySqlCommand cmd = new MySqlCommand("update tbFuncionario set funcNome=@funcNome, funcNomeSoc=@funcNomeSoc, funcCargo=@funcCargo, funcSenha=@funcSenha where funcCod=@funcCod", con.ConectarBD());
+            cmd.Parameters.Add("@funcCod", MySqlDbType.Int32).Value = funcio.funcCod;
+            cmd.Parameters.Add("@funcNome", MySqlDbType.VarChar).Value = funcio.funcNome;
+            cmd.Parameters.Add("@funcNomeSoc", MySqlDbType.VarChar).Value = funcio.funcNomeSoc;
+            cmd.Parameters.Add("@funcCargo", MySqlDbType.VarChar).Value = funcio.funcCargo;
+            cmd.Parameters.Add("@funcSenha", MySqlDbType.VarChar).Value = funcio.funcSenha;
+            cmd.ExecuteNonQuery();
+            con.DesconectarBD();
+        }
+
+        //Excluir funcionário
+
+        public void FuncionarioExcluir(int cd)
+        {
+            var comando = string.Format("delete from tbFuncionario where funcCod={0}", cd);
+            MySqlCommand cmd = new MySqlCommand(comando, con.ConectarBD());
+            cmd.ExecuteReader();
         }
     }
 }

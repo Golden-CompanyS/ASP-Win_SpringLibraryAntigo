@@ -1,1 +1,59 @@
-﻿socoro
+﻿@model SpringLibrary.Models.Funcionario
+@{
+    ViewBag.Title = "FuncionarioAlterar";
+}
+
+<h2>Alterar Funcionário"</h2>
+
+@using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h2>Funcionário</h2>
+                    <hr />
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.funcCod)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(m=> m.funcCod)
+                    </div>
+
+                     <div class="form-group">
+                        @Html.LabelFor(m => m.funcNome)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(m=> m.funcNome)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.funcNomeSoc)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(m=> m.funcNomeSoc)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.funcCargo)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(m=> m.funcCargo)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.funcSenha)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(m=> m.funcSenha)
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2col-md-10">
+                            <input type="submit" value="Salvar"  class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+ }
+

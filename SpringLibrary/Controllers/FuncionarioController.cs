@@ -39,5 +39,35 @@ namespace SpringLibrary.Controllers
             var TodosFunc = ExibirFunc.ListarFunc();
             return View(TodosFunc);
         }
+
+        //Alterando dados do Funcionário 
+
+        [HttpGet]
+
+        public ActionResult FuncionarioAlterar(int cd)
+        {
+            var FuncCod = ac.ListarFuncCod(cd);
+            if (FuncCod == null)
+            {
+                return HttpNotFound();
+            }
+            return View(FuncCod);
+        }
+
+        [HttpPost]
+
+        public ActionResult FuncionarioAlterar(Funcionario funcio)
+        {
+            ac.FuncionarioAlterar(funcio);
+            return (RedirectToAction("ConsultarFuncionario"));
+        }
+
+        //Excluir dados do funcionário
+
+        public ActionResult FuncionarioExcluir(int cd)
+        {
+            ac.FuncionarioExcluir(cd);
+            return View();
+        }
     }
 }
