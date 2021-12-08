@@ -121,8 +121,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
+    <Compile Include="Controllers\EnderecoController.cs" />
+    <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemVendaController.cs" />
+    <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NotaFiscalController.cs" />
+    <Compile Include="Controllers\RestauracaoController.cs" />
+    <Compile Include="Controllers\SouvenirController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,7 +152,7 @@
     <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\NotaFiscal.cs" />
     <Compile Include="Models\Produto.cs" />
-    <Compile Include="Models\Restaurcao.cs" />
+    <Compile Include="Models\Restauracao.cs" />
     <Compile Include="Models\Souvenir.cs" />
     <Compile Include="Models\SouvProd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +199,17 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Livro\LivroView.cshtml" />
+    <Content Include="Views\Souvenir\SouvenirView.cshtml" />
+    <Content Include="Views\Cliente\ClienteFisico.cshtml" />
+    <Content Include="Views\Cliente\ClienteJuridico.cshtml" />
+    <Content Include="Views\Funcionario\FuncionarioView.cshtml" />
+    <Content Include="Views\NotaFiscal\NotaFiscalView.cshtml" />
+    <Content Include="Views\ItemVenda\ItemVendaView.cshtml" />
+    <Content Include="Views\Delivery\DeliveryView.cshtml" />
+    <Content Include="Views\Restauracao\RestauracaoView.cshtml" />
+    <Content Include="Views\Endereco\EnderecoView.cshtml" />
+    <Content Include="Views\Evento\EventoView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

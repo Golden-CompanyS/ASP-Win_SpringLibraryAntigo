@@ -1,7 +1,7 @@
 drop database if exists dbspringlibrary;
 
 /*Integrantes: Leticia Resina (líder), Maria Eduarda Rodrigues, Larissa Sonoda, Mateus Taveira, Wesley Spiandorim
-Guilherme Lemes & Gustavo Pereira */
+Guilherme Lemes */
 
 -- Criando o banco 
 

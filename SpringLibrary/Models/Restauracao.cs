@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SpringLibrary.Models
 {
-    public class Restaurcao
+    public class Restauracao
     {
         [Display(Name = "Código da Restauração")]
         public int restCod { get; set; }
