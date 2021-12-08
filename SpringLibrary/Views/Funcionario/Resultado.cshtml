@@ -1,0 +1,33 @@
+﻿@model SpringLibrary.Models.Funcionario
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2> Resultados do Cadastro </h2>
+
+<fieldset>
+
+    <legend>Informações do funcionário</legend>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.funcCod)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.funcCod)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.funcNome)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.funcNome)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.funcNomeSoc)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.funcNomeSoc)</div>
+
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.funcCargo)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.funcCargo)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.funcSenha)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.funcSenha)</div>
+
+    <br />
+
+    @Html.ActionLink("Alterar", "FuncionarioView", "Funcionario")
+    @Html.ActionLink("Confirmar", "Index", "Home")
+
+</fieldset>

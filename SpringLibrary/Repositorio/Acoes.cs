@@ -41,5 +41,18 @@ namespace SpringLibrary.Repositorio
             }
             return f;
         }
+
+        public void CadastrarFuncionario(Funcionario funcio)
+        {
+            MySqlCommand cmd = new MySqlCommand("insert into tbfuncionario values(@funcCod, @funcNome, @funcNomeSoc, " +
+                "@funcCargo, @funcSenha)", con.ConectarBD());
+            cmd.Parameters.Add("@funcCod", MySqlDbType.Int32).Value = funcio.funcCod;
+            cmd.Parameters.Add("@funcNome", MySqlDbType.VarChar).Value = funcio.funcNome;
+            cmd.Parameters.Add("@funcNomeSoc", MySqlDbType.VarChar).Value = funcio.funcNomeSoc;
+            cmd.Parameters.Add("@funcCargo", MySqlDbType.VarChar).Value = funcio.funcCargo;
+            cmd.Parameters.Add("@funcSenha", MySqlDbType.VarChar).Value = funcio.funcSenha;
+            cmd.ExecuteNonQuery();
+            con.DesconectarBD();
+        }
     }
 }

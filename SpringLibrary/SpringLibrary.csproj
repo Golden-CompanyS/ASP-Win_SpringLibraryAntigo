@@ -210,9 +210,11 @@
     <Content Include="Views\Restauracao\RestauracaoView.cshtml" />
     <Content Include="Views\Endereco\EnderecoView.cshtml" />
     <Content Include="Views\Evento\EventoView.cshtml" />
+    <Content Include="Views\Funcionario\Resultado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Produto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

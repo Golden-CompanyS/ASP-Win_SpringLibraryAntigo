@@ -1,5 +1,58 @@
-﻿@{
+﻿@model SpringLibrary.Models.Funcionario
+@{
     ViewBag.Title = "FuncionarioView";
 }
 
-AAAAAAAAAAAAAAAAAAA
+@using (Html.BeginForm())
+            {
+        @Html.ValidationSummary(true)
+
+                <fieldset>
+
+                    <legend>Cadastro de Funcionário</legend>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.funcCod)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m => m.funcCod)
+                        @Html.ValidationMessageFor(m => m.funcCod)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m=>m.funcNome)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m=>m.funcNome)
+                        @Html.ValidationMessageFor(m=> m.funcNome)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m=>m.funcNomeSoc)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m => m.funcNomeSoc)
+                        @Html.ValidationMessageFor(m => m.funcNomeSoc)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.funcCargo)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m => m.funcCargo)
+                        @Html.ValidationMessageFor(m => m.funcCargo)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.funcSenha)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m => m.funcSenha)
+                        @Html.ValidationMessageFor(m => m.funcSenha)
+                    </div>
+
+                    <div>
+                        <br /><input type="submit" value="Cadastrar" />
+                    </div>
+                </fieldset>
+            }
