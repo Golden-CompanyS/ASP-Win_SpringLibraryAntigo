@@ -211,6 +211,9 @@
     <Content Include="Views\Endereco\EnderecoView.cshtml" />
     <Content Include="Views\Evento\EventoView.cshtml" />
     <Content Include="Views\Funcionario\Resultado.cshtml" />
+    <Content Include="Views\Funcionario\FuncionarioAlterar.cshtml" />
+    <Content Include="Views\Funcionario\FuncionarioExcluir.cshtml" />
+    <Content Include="Views\Funcionario\ConsultarFuncionario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

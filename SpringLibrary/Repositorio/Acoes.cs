@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
 using SpringLibrary.Models;
+using System.Data;
 
 namespace SpringLibrary.Repositorio
 {
@@ -42,6 +43,7 @@ namespace SpringLibrary.Repositorio
             return f;
         }
 
+        //Cadastrar Funcionário
         public void CadastrarFuncionario(Funcionario funcio)
         {
             MySqlCommand cmd = new MySqlCommand("insert into tbfuncionario values(@funcCod, @funcNome, @funcNomeSoc, " +
@@ -53,6 +55,47 @@ namespace SpringLibrary.Repositorio
             cmd.Parameters.Add("@funcSenha", MySqlDbType.VarChar).Value = funcio.funcSenha;
             cmd.ExecuteNonQuery();
             con.DesconectarBD();
+        }
+
+        //Consultar Funcionário
+
+        public List<Funcionario> ListarFunc()
+        {
+            MySqlCommand cmd = new MySqlCommand("select * from tbFuncionario", con.ConectarBD());
+            var DadosFunc = cmd.ExecuteReader();
+            return ListarFunc(DadosFunc);
+        }
+
+        //listando pelo código
+
+        public Funcionario ListarFuncCod(int cd)
+        {
+            var comando = string.Format("select * from tbFuncionario where funcCod = {0}", cd);
+            MySqlCommand cmd = new MySqlCommand(comando, con.ConectarBD());
+            var DadosFuncCod = cmd.ExecuteReader();
+            return ListarFunc(DadosFuncCod).FirstOrDefault();
+        }
+
+        public List<Funcionario> ListarFunc(MySqlDataReader dr)
+        {
+            var AltFunc = new List<Funcionario>();
+            while(dr.Read())
+            {
+                var FuncTemp = new Funcionario()
+                {
+                    funcCod = int.Parse(dr["funcCod"].ToString()),
+                    funcNome = dr["funcNome"].ToString(),
+                    funcNomeSoc = dr["funcNomeSoc"].ToString(),
+                    funcCargo = dr["funcCargo"].ToString(),
+                    funcSenha = dr["funcSenha"].ToString(),
+                };
+
+                AltFunc.Add(FuncTemp);
+            }
+
+            dr.Close();
+            return AltFunc;
+
         }
     }
 }

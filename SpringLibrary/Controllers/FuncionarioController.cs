@@ -10,6 +10,8 @@ namespace SpringLibrary.Controllers
 {
     public class FuncionarioController : Controller
     {
+
+        //Ação para chamar as Views de Funcionário 
         // GET: Funcionario
         public ActionResult FuncionarioView()
         {
@@ -21,10 +23,21 @@ namespace SpringLibrary.Controllers
 
         [HttpPost]
 
+        //Cadastrando funcionário
+
         public ActionResult CadastrarFuncionario(Funcionario funcio)
         {
             ac.CadastrarFuncionario(funcio);
             return View("Resultado", funcio);
+        }
+
+        //Consultando Funcionário
+
+        public ActionResult ConsultarFuncionario()
+        {
+            var ExibirFunc = new Acoes();
+            var TodosFunc = ExibirFunc.ListarFunc();
+            return View(TodosFunc);
         }
     }
 }

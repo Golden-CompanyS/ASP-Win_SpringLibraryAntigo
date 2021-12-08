@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SpringLibrary.Models.Funcionario>
+
+@{
+    ViewBag.Title = "ConsultarFuncionario";
+}
+
+<h2> Consultando Funcionários </h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo Funcionário", "FuncionarioView")
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.funcCod)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.funcNome)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.funcNomeSoc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.funcCargo)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.funcCod)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.funcNome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.funcNomeSoc)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.funcCargo)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "FuncionarioAlterar", null, new { cd = item.funcCod }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Excluir", "FuncionarioExcluir", null, new { cd = item.funcCod }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+</table>
