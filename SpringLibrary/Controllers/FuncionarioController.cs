@@ -21,7 +21,7 @@ namespace SpringLibrary.Controllers
 
         [HttpPost]
 
-        public ActionResult FuncionarioView(Funcionario funcio)
+        public ActionResult CadastrarFuncionario(Funcionario funcio)
         {
             ac.CadastrarFuncionario(funcio);
             return View("Resultado", funcio);

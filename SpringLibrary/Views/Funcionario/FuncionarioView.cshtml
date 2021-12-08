@@ -3,9 +3,8 @@
     ViewBag.Title = "FuncionarioView";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CadastrarFuncionario", "Funcionario", FormMethod.Post))
             {
-        @Html.ValidationSummary(true)
 
                 <fieldset>
 
