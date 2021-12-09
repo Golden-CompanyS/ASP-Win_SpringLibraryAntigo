@@ -1,0 +1,132 @@
+﻿@model IEnumerable <SpringLibrary.Models.Cliente>
+
+@{
+    ViewBag.Title = "ConsultarCliente";
+}
+
+<h2> Consultando Clientes </h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo Cliente Físico", "ClienteFisico")
+    <br />
+    @Html.ActionLink("Cadastrar Novo Cliente Jurídico", "ClienteJuridico")
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.cliCod)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CPF)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CNPJ)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.cliNome)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.cliNomeSoc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CliFisNasc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.cliTel)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.cliEmail)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.lograd)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.cidNome)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.UF)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CEP)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.cliCod)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.CPF)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.CNPJ)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cliNome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cliNomeSoc)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cliJurRep)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.CliFisNasc)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cliTel)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cliTel)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cliEmail)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.lograd)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.cidNome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.UF)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.CEP)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "ClienteAlterar", null, new { cd = item.cliCod }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Excluir", "ClienteExcluir", null, new { cd = item.cliCod }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+</table>

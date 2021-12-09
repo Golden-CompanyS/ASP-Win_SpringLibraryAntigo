@@ -162,5 +162,53 @@ namespace SpringLibrary.Repositorio
             cmd.ExecuteNonQuery();
             con.DesconectarBD();
         }
+
+        //listar clientes
+
+        public List<Cliente> ListarCliente()
+        {
+            MySqlCommand cmd = new MySqlCommand("select * from seeClis", con.ConectarBD());
+            var DadosCli = cmd.ExecuteReader();
+            return ListarCliente(DadosCli);
+        }
+
+        //listando pelo código
+
+        public Cliente ListarClienteCod(int cd)
+        {
+            var comando = string.Format("select * from seeClis where cliCod = {0}", cd);
+            MySqlCommand cmd = new MySqlCommand(comando, con.ConectarBD());
+            var DadosCliCod = cmd.ExecuteReader();
+            return ListarCliente(DadosCliCod).FirstOrDefault();
+        }
+
+        public List<Cliente> ListarCliente(MySqlDataReader dr)
+        {
+            var AltCli = new List<Cliente>();
+            while (dr.Read())
+            {
+                var CliTemp = new Cliente()
+                {
+                    cliCod = int.Parse(dr["cliCod"].ToString()),
+                    CPF = dr["CPF"].ToString(),
+                    CNPJ = dr["CNPJ"].ToString(),
+                    cliNome = dr["cliNome"].ToString(),
+                    cliNomeSoc = dr["cliNomeSoc"].ToString(),
+                    cliJurRep = dr["cliJurRep"].ToString(),
+                    CliFisNasc = DateTime.Parse(dr["cliFisNasc"].ToString()),
+                    cliTel = dr["cliTel"].ToString(),
+                    cliEmail = dr["cliEmail"].ToString(),
+                    lograd = dr["lograd"].ToString(),
+                    cidNome = dr["cidNome"].ToString(),
+                    UF = dr["UF"].ToString(),
+                    CEP = dr["CEP"].ToString(),
+                };
+
+                AltCli.Add(CliTemp);
+            }
+
+            dr.Close();
+            return AltCli;
+        }
     }
 }

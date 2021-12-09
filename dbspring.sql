@@ -430,7 +430,7 @@ c.cliNome as "Responsável"
 from (tbrestauracao as r
 	inner join tbcliente as c on r.cliCod = c.cliCod);
     
-create view seeClis as
+createview seeClis as
 select c.cliCod as "Cod. do cli.", c.CPF as "CPF", c.CNPJ as "CNPJ", c.cliNome as "Nome", c.cliNomeSoc as "Nome social", c.cliJurRep as "Representante jurídico",
 c.cliFisNasc as "Data de nascimento", c.cliTel as "Telefone", c.cliEmail as "Email", e.lograd as "Logradouro", cid.cidNome as "Cidade", est.UF as "Estado", e.CEP as "CEP"
 from (((tbcliente as c
@@ -556,6 +556,7 @@ select * from showRestors;
 select * from seeClis;
 
 select * from tbFuncionario;
+
 
 SET SQL_SAFE_UPDATES = 0;
 

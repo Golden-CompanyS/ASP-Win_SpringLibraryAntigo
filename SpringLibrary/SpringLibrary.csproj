@@ -216,6 +216,9 @@
     <Content Include="Views\Funcionario\ConsultarFuncionario.cshtml" />
     <Content Include="Views\Cliente\ResultadoCliFis.cshtml" />
     <Content Include="Views\Cliente\ResultadoCliJur.cshtml" />
+    <Content Include="Views\Cliente\ConsultarCliente.cshtml" />
+    <Content Include="Views\Cliente\ClienteAlterar.cshtml" />
+    <Content Include="Views\Cliente\ClienteExcluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

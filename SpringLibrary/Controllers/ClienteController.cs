@@ -45,6 +45,18 @@ namespace SpringLibrary.Controllers
             return View("ResultadoCliJur", cli);
         }
 
+        //Listar clientes
+
+        public ActionResult ConsultarCliente()
+        {
+            var ExibirCli = new Acoes();
+            var TodosCli = ExibirCli.ListarCliente();
+            return View(TodosCli);
+        }
+
+        //Alterar clientes
+
+        //Excluir clientes
 
     }
 }
