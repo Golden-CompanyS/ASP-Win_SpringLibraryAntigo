@@ -119,5 +119,28 @@ namespace SpringLibrary.Repositorio
             MySqlCommand cmd = new MySqlCommand(comando, con.ConectarBD());
             cmd.ExecuteReader();
         }
+
+
+        //Cadastrar Cliente Físico
+
+        public void CadastrarCliFis(Cliente cli)
+        {
+            MySqlCommand cmd = new MySqlCommand("call insertCliFis(@CPF, @cliNome, @cliNomeSoc, @CliFisNasc, " +
+                "@cliTel, @cliEmail, @lograd, @cliEndNum, @cidNome, @UF, @CEP)", con.ConectarBD());
+            string data_sistema = Convert.ToDateTime(cli.CliFisNasc).ToString("yyyy-MM-dd");
+            cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cli.CPF;
+            cmd.Parameters.Add("@cliNome", MySqlDbType.VarChar).Value = cli.cliNome;
+            cmd.Parameters.Add("@cliNomeSoc", MySqlDbType.VarChar).Value = cli.cliNomeSoc;
+            cmd.Parameters.Add("@cliFisNasc", MySqlDbType.DateTime).Value = data_sistema;
+            cmd.Parameters.Add("@cliTel", MySqlDbType.VarChar).Value = cli.cliTel;
+            cmd.Parameters.Add("@cliEmail", MySqlDbType.VarChar).Value = cli.cliEmail;
+            cmd.Parameters.Add("@lograd", MySqlDbType.VarChar).Value = cli.lograd;
+            cmd.Parameters.Add("@cliEndNum", MySqlDbType.Int24).Value = cli.cliEndNum;
+            cmd.Parameters.Add("@cidNome", MySqlDbType.VarChar).Value = cli.cidNome;
+            cmd.Parameters.Add("@UF", MySqlDbType.VarChar).Value = cli.UF;
+            cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = cli.CEP;
+            cmd.ExecuteNonQuery();
+            con.DesconectarBD();
+        }
     }
 }

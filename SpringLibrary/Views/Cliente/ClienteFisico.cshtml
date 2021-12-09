@@ -1,7 +1,105 @@
-﻿
+﻿@model SpringLibrary.Models.Cliente
 @{
     ViewBag.Title = "ClienteFisico";
 }
 
-<h2>ClienteFisico</h2>
+@using (Html.BeginForm("CadastrarCliFis", "Cliente", FormMethod.Post))
+            {
+<fieldset>
+
+    <legend>Cadastro de Cliente Físico</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.CPF)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CPF)
+        @Html.ValidationMessageFor(m => m.CPF)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliNome)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.cliNome)
+        @Html.ValidationMessageFor(m => m.cliNome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliNomeSoc)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.cliNomeSoc)
+        @Html.ValidationMessageFor(m => m.cliNomeSoc)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.CliFisNasc)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CliFisNasc)
+        @Html.ValidationMessageFor(m => m.CliFisNasc)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliTel)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.cliTel)
+        @Html.ValidationMessageFor(m => m.cliTel)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliEmail)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.cliEmail)
+        @Html.ValidationMessageFor(m => m.cliEmail)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.lograd)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.lograd)
+        @Html.ValidationMessageFor(m => m.lograd)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliEndNum)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.cliEndNum)
+        @Html.ValidationMessageFor(m => m.cliEndNum)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cidNome)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.cidNome)
+        @Html.ValidationMessageFor(m => m.cidNome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.UF)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.UF)
+        @Html.ValidationMessageFor(m => m.UF)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.CEP)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CEP)
+        @Html.ValidationMessageFor(m => m.CEP)
+    </div>
+
+    <div>
+        <br /><input type="submit" value="Cadastrar" />
+    </div>
+</fieldset>
+            }
 
