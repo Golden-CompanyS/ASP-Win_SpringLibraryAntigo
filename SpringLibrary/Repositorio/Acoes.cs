@@ -142,5 +142,25 @@ namespace SpringLibrary.Repositorio
             cmd.ExecuteNonQuery();
             con.DesconectarBD();
         }
+
+        //Cadastrar Cliente Jurídico 
+
+        public void CadastrarCliJur(Cliente cli)
+        {
+            MySqlCommand cmd = new MySqlCommand("call insertCliJur(@CNPJ, @cliNome, @cliJurRep, @cliTel, @cliEmail, " +
+                "@lograd, @cliEndNum, @cidNome, @UF, @CEP)", con.ConectarBD());
+            cmd.Parameters.Add("@CNPJ", MySqlDbType.VarChar).Value = cli.CNPJ;
+            cmd.Parameters.Add("@cliNome", MySqlDbType.VarChar).Value = cli.cliNome;
+            cmd.Parameters.Add("@cliJurRep", MySqlDbType.VarChar).Value = cli.cliJurRep;
+            cmd.Parameters.Add("@cliTel", MySqlDbType.VarChar).Value = cli.cliTel;
+            cmd.Parameters.Add("@cliEmail", MySqlDbType.VarChar).Value = cli.cliEmail;
+            cmd.Parameters.Add("@lograd", MySqlDbType.VarChar).Value = cli.lograd;
+            cmd.Parameters.Add("@cliEndNum", MySqlDbType.Int24).Value = cli.cliEndNum;
+            cmd.Parameters.Add("@cidNome", MySqlDbType.VarChar).Value = cli.cidNome;
+            cmd.Parameters.Add("@UF", MySqlDbType.VarChar).Value = cli.UF;
+            cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = cli.CEP;
+            cmd.ExecuteNonQuery();
+            con.DesconectarBD();
+        }
     }
 }

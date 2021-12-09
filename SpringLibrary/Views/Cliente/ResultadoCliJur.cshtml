@@ -1,0 +1,47 @@
+﻿@model SpringLibrary.Models.Cliente
+@{
+    ViewBag.Title = "ResultadoCliJur";
+}
+
+<h2> Resultados do Cadastro </h2>
+
+<fieldset>
+
+    <legend>Informações do funcionário</legend>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.CNPJ)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.CNPJ)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.cliNome)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.cliNome)</div>
+
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.cliJurRep)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.cliJurRep)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.cliTel)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.cliTel)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.cliEmail)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.cliEmail)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.lograd)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.lograd)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.cliEndNum)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.cliEndNum)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.cidNome)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.cidNome)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.UF)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.UF)</div>
+
+    <div class="editor-label">@Html.DisplayNameFor(m => m.CEP)</div>
+    <div class="editor-field">@Html.DisplayFor(m => m.CEP)</div>
+
+    <br />
+
+    @Html.ActionLink("Confirmar", "Index", "Home")
+
+</fieldset>

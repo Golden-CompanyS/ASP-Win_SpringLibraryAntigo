@@ -29,12 +29,20 @@ namespace SpringLibrary.Controllers
 
         [HttpPost]
 
-        //Parte do cliente físico
+        //Cadastrar cliente físico 
 
         public ActionResult CadastrarCliFis(Cliente cli)
         {
             ac.CadastrarCliFis(cli);
             return View("ResultadoCliFis", cli);
+        }
+
+        //Cadastrar cliente jurídico 
+
+        public ActionResult CadastrarCliJur(Cliente cli)
+        {
+            ac.CadastrarCliJur(cli);
+            return View("ResultadoCliJur", cli);
         }
 
 
